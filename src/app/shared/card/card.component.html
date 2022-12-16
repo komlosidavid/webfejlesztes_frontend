@@ -1,0 +1,25 @@
+<div class="grid">
+  <div class="ui card" *ngFor="let shoe of shoes">
+    <img [src]="shoe.image_url" [alt]="shoe.brand + shoe.type" />
+    <div class="content">
+      <a class="header">{{ shoe.brand }}</a>
+      <div class="meta">
+        <span class="date">{{ shoe.type }}</span>
+      </div>
+      <div class="description">
+        <p>Size: {{ shoe.size }}</p>
+        <p>Color: {{ shoe.color }}</p>
+        <p>Sex: {{ shoe.sex }}</p>
+        <p style="font-weight: bold">
+          Price: {{ shoe.price | currency : "HUF" }}
+        </p>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="ui basic button primary" (click)="addToCart(shoe.id)">
+        <i class="icon cart"></i>
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>

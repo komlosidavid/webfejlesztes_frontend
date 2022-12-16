@@ -1,0 +1,8 @@
+<div class="account" *ngFor="let account of accounts.value">
+  <div class="header">{{ account.username }}</div>
+  <div class="infos">
+    <p><span>Created at:</span> {{ account.created | date }}</p>
+    <p><span>Email: </span>{{ account.email }}</p>
+    <p><span>Role: </span>{{ account.role }}</p>
+  </div>
+</div>

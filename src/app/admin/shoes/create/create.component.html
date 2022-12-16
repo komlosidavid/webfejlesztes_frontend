@@ -1,0 +1,61 @@
+<div>
+  <div class="ui message errormsg" *ngIf="error">
+    There was an error with uploading the shoe.
+  </div>
+  <form class="ui form" [formGroup]="form" (ngSubmit)="handleFormSubmit()">
+    <div class="ui two column stackable grid">
+      <div class="column">
+        <app-input
+          label="Brand"
+          [control]="$any(form.controls['brand'])"
+        ></app-input>
+      </div>
+      <div class="column">
+        <app-input
+          label="Type"
+          [control]="$any(form.controls['type'])"
+        ></app-input>
+      </div>
+    </div>
+    <div class="ui two column stackable grid">
+      <div class="column">
+        <app-input
+          type="number"
+          label="Size"
+          [control]="$any(form.controls['size'])"
+        ></app-input>
+      </div>
+      <div class="column">
+        <app-input
+          label="Color"
+          [control]="$any(form.controls['color'])"
+        ></app-input>
+      </div>
+    </div>
+    <div class="ui two column stackable grid">
+      <div class="column">
+        <app-input
+          label="Sex"
+          [control]="$any(form.controls['sex'])"
+        ></app-input>
+      </div>
+      <div class="column">
+        <app-input
+          label="Price"
+          type="number"
+          [control]="$any(form.controls['price'])"
+        ></app-input>
+      </div>
+      <div class="column" style="width: 100%">
+        <app-input
+          label="Image url"
+          [control]="$any(form.controls['image_url'])"
+        ></app-input>
+      </div>
+    </div>
+
+    <button class="ui button primary" type="submit" [disabled]="form.invalid">
+      Add
+    </button>
+  </form>
+</div>

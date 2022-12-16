@@ -1,0 +1,47 @@
+<div class="ui dimmer active visible">
+  <div class="ui modal active visible">
+    <div class="header">Update shoe</div>
+    <div class="ui divider"></div>
+    <div class="form-container">
+      <form
+        class="ui form"
+        style="margin-bottom: 1rem"
+        [formGroup]="updateForm"
+      >
+        <app-input
+          label="Brand"
+          [placeholder]="shoe.brand"
+          [control]="$any(updateForm.controls['brand'])"
+        ></app-input>
+        <app-input
+          label="Type"
+          [placeholder]="shoe.type"
+          [control]="$any(updateForm.controls['type'])"
+        ></app-input>
+        <app-input
+          label="Size"
+          [placeholder]="shoe.size"
+          [control]="$any(updateForm.controls['size'])"
+        ></app-input>
+        <app-input
+          label="Color"
+          [placeholder]="shoe.color"
+          [control]="$any(updateForm.controls['color'])"
+        ></app-input>
+        <app-input
+          label="Image url"
+          [placeholder]="shoe.image_url"
+          [control]="$any(updateForm.controls['image_url'])"
+        ></app-input>
+        <button
+          class="ui button primary"
+          (click)="updateShoe()"
+          [disabled]="updateForm.invalid"
+        >
+          Update
+        </button>
+        <button class="ui button" (click)="closeModal()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="ui container">
+  <div class="ui breadcrumb">
+    <div class="active section">Cart</div>
+  </div>
+  <div class="grid">
+    <div class="ui card" *ngFor="let shoe of shoes.value">
+      <img [src]="shoe.image_url" [alt]="shoe.brand + shoe.type" />
+      <div class="content">
+        <a class="header">{{ shoe.brand }}</a>
+        <div class="meta">
+          <span class="date">{{ shoe.type }}</span>
+        </div>
+        <div class="description">
+          <p>Size: {{ shoe.size }}</p>
+          <p>Color: {{ shoe.color }}</p>
+          <p>Sex: {{ shoe.sex }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

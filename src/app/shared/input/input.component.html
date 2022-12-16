@@ -1,0 +1,18 @@
+<div class="field" style="margin: 1rem 0">
+    <label>{{ label }}</label>
+    <input [type]="type" [placeholder]="placeholder" [formControl]="control"/>
+</div>
+<ng-container *ngIf="control.dirty && control.touched && control.errors">
+    <div class="ui message" style="background-color: rgb(255, 225, 225);" *ngIf="control.errors['required']">
+        <p>This field is required!</p>
+    </div>
+    <div class="ui message" style="background-color: rgb(255, 225, 225);" *ngIf="control.errors['minlength']">
+        <p>The minimum length for this field is {{ control.errors["minlength"].requiredLength }}.</p>
+    </div>
+    <div class="ui message" style="background-color: rgb(255, 225, 225);" *ngIf="control.errors['maxlength']">
+        <p>The maximum length for this field is {{ control.errors["maxlength"].requiredLength }}.</p>
+    </div>
+    <div class="ui message" style="background-color: rgb(255, 225, 225);" *ngIf="control.errors['email']">
+        <p>This field must contain a valid email address.</p>
+    </div>
+</ng-container>

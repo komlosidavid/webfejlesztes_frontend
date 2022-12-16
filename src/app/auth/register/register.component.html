@@ -1,0 +1,37 @@
+<div class="ui container">
+  <form class="ui form" [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
+    <app-input
+      label="Name"
+      placeholder="John Doe"
+      [control]="$any(registerForm.controls['name'])"
+    ></app-input>
+    <app-input
+      label="Username"
+      placeholder="johndoe"
+      [control]="$any(registerForm.controls['username'])"
+    ></app-input>
+    <app-input
+      type="email"
+      label="Email"
+      placeholder="johndoe@example.com"
+      [control]="$any(registerForm.controls['email'])"
+    ></app-input>
+    <app-input
+      type="password"
+      label="Password"
+      [control]="$any(registerForm.controls['password'])"
+    ></app-input>
+    <app-input
+      type="password"
+      label="Confirm password"
+      [control]="$any(registerForm.controls['confirmPassword'])"
+    ></app-input>
+    <button
+      class="ui button primary"
+      type="submit"
+      [disabled]="registerForm.invalid"
+    >
+      Register
+    </button>
+  </form>
+</div>

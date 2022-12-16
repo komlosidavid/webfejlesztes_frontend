@@ -1,0 +1,30 @@
+<app-card-placeholder *ngIf="!isLoaded"></app-card-placeholder>
+<div class="grid" *ngIf="isLoaded">
+  <div class="ui card" *ngFor="let shoe of shoes">
+    <img [src]="shoe.image_url" />
+    <div class="content">
+      <a class="header">{{ shoe.brand }}</a>
+      <div class="meta">
+        <span class="date">{{ shoe.type }}</span>
+      </div>
+      <div class="description">
+        <p>Size: {{ shoe.size }}</p>
+        <p>Color: {{ shoe.color }}</p>
+        <p>Sex: {{ shoe.sex }}</p>
+        <p style="font-weight: bold">
+          Price: {{ shoe.price | currency : "HUF" }}
+        </p>
+      </div>
+    </div>
+    <div class="extra settings">
+      <i class="trash icon" (click)="openModal(shoe.id)"></i>
+      <i class="edit icon" (click)="openEditModal(shoe.id)"></i>
+    </div>
+  </div>
+</div>
+<app-modal *ngIf="isModalOpen" [id]="shoeId" (close)="closeModal()"></app-modal>
+<app-editmodal
+  *ngIf="isEditModalOpen"
+  (close)="closeEditModal()"
+  [id]="shoeId"
+></app-editmodal>

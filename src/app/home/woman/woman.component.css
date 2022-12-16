@@ -1,0 +1,11 @@
+.container {
+  margin-top: 4rem;
+}
+.cards {
+  width: 100%;
+  display: flex;
+  margin-top: 3rem;
+}
+.breadcrumb {
+  margin-bottom: 3rem;
+}

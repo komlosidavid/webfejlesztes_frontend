@@ -1,0 +1,58 @@
+<nav>
+  <div class="logo" routerLink="/">webshop application</div>
+  <div class="ui secondary menu">
+    <a
+      class="item"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Shoes
+    </a>
+    <div class="right menu">
+      <div class="item">
+        <div class="ui icon input">
+          <input type="text" placeholder="Search..." />
+          <i class="search link icon"></i>
+        </div>
+      </div>
+      <div class="item">
+        <i class="icon shopping basket" routerLink="/cart" [state]="user"></i>
+        <div class="order_number" *ngIf="orders.length > 0">
+          {{ orders.length }}
+        </div>
+      </div>
+      <ng-container *ngIf="signedIn | async"
+        ><a
+          routerLink="/admin"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="ui item"
+          *ngIf="user.role == 'ADMIN'"
+        >
+          Admin panel
+        </a>
+        <a class="ui item"> {{ user.username }} </a>
+        <a class="ui item" (click)="logout()"> Logout </a></ng-container
+      >
+      <ng-container *ngIf="!(signedIn | async)"
+        ><a
+          class="ui item"
+          routerLink="/login"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Login
+        </a>
+        <a
+          routerLink="/register"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="ui item"
+        >
+          Register
+        </a></ng-container
+      >
+    </div>
+  </div>
+</nav>

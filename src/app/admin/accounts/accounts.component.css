@@ -1,0 +1,26 @@
+.account {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 2rem;
+  border-bottom: 1px solid rgb(224, 224, 224);
+  display: flex;
+  align-items: center;
+}
+.header {
+  min-width: 100px;
+  margin-right: 2rem;
+  font-weight: bold;
+  font-size: larger;
+}
+p {
+  margin: 0;
+  margin-right: 2rem;
+  padding: 0;
+}
+span {
+  color: rgb(167, 167, 167);
+}
+.infos {
+  display: flex;
+  align-items: center;
+}

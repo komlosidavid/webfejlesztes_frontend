@@ -1,0 +1,21 @@
+<div class="ui pointing menu">
+  <a
+    class="item"
+    routerLink="/admin/shoes/all"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    All shoes
+  </a>
+  <a
+    class="item"
+    routerLink="/admin/shoes/create"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    Create shoe
+  </a>
+</div>
+<div class="ui segment">
+  <router-outlet></router-outlet>
+</div>

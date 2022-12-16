@@ -1,0 +1,9 @@
+<div class="ui container">
+  <div class="ui breadcrumb">
+    <a class="section" routerLink="/">Home</a>
+    <i class="right angle icon divider"></i>
+    <div class="active section">Man</div>
+  </div>
+  <app-card-placeholder *ngIf="!isLoaded"></app-card-placeholder>
+  <app-card [shoes]="getShoes()"></app-card>
+</div>
